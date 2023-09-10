@@ -1,0 +1,1 @@
+alter table country alter column continent type int4 USING continent::integer; -- cambiar tipo de dato de una columna

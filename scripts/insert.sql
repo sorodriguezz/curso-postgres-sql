@@ -1,0 +1,2 @@
+insert into continent (name) select distinct continent from country order by continent; -- volcado de datos de country a continent
+insert into country_bk select * from country; -- volcado completo de una tabla a otra

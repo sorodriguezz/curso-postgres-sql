@@ -1,0 +1,1 @@
+update country a set continent = (select code from continent b where b.name = a.continent); -- convertir los campos de una tabla desde otra

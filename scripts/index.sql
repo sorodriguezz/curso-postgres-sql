@@ -5,3 +5,7 @@ create unique index "unique_country_name" on country (
 create index "country_name" on country (
   continent
 ); -- creacion indice no unico
+
+create unique index "unique_name_countrycode_district" on city (name, countrycode, district);
+
+create index "index_district" on city (district);
