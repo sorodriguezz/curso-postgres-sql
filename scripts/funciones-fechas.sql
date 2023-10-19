@@ -20,3 +20,14 @@ select max(hire_date),
        make_interval(years := date_part('year', now())::integer),
        max(hire_date)+ make_interval(years := 23)
 from employees;
+
+
+-- mientras mas años tiene de empleado mas crece los años que lleva
+select hire_date,
+       make_interval(years := 2023 - extract(years from hire_date)::integer),
+       make_interval(years := date_part('years', current_date)::integer - extract(years from hire_date)::integer)
+from employees
+order by hire_date desc;
+
+-- actualiza todos los años y le sumo el año actual
+update employees set hire_date = hire_date + interval '23 years';
